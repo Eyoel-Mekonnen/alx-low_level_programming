@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+
 /**
  * main - main function
  *
@@ -11,7 +12,6 @@ int main(void)
 
 	while (num1 < 9)
 	{
-
 		if (num1 < num2)
 		{
 			putchar(num1 + 48);
@@ -20,7 +20,7 @@ int main(void)
 			{
 				putchar(',');
 				putchar(' ');
-			}	
+			}
 			num2++;
 			if (num2 > 9)
 			{
