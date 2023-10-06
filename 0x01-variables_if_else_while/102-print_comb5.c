@@ -8,6 +8,7 @@
 int main(void)
 {
 	int num1 = 0, num2 = 0, num3 = 0, num4 = 1;
+
 	while (num1 < 10)
 	{
 		if ((num3 + num4) >= (num1 + num2))
@@ -19,7 +20,6 @@ int main(void)
 			putchar(num4 + 48);
 			putchar(' ');
 			num4++;
-		
 			if (num4 > 9)
 			{
 				num3++;
@@ -39,8 +39,6 @@ int main(void)
 				num4 = 0;
 			}
 		}
-		
-	}
 	putchar('\n');
 	return (0);
 }
