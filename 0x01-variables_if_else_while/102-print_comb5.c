@@ -33,7 +33,8 @@ int main(void)
 			num4++;
 		}
 		else if (((num1 <= num3) && (num3 + num4 >= num1 + num2)) ||
-				((num1 == 0) && ((num1 <= 3) && (num3 != 0))))
+				((num1 == 0) && ((num1 <= 3) && (num3 != 0)))
+				|| ((num1 + num2 > num3 + num4) && (num1 < num3)))
 		{
 			print_s(num1, num2, num3, num4);
 			if (num1 == 9 && num2 == 8 && num3 == 9 && num4 == 9)
