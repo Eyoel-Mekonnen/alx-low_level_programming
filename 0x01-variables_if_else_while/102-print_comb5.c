@@ -22,15 +22,17 @@ int main(void)
 
 	while (num1 <= 9)
 	{
-		/**
 		if ((num1 == num3) && (num2 == num4))
 		{
+			if (num4 == 9)
+			{
+				num3++;
+				num4 = 0;
+			}
+			else
 			num4++;
 		}
-		**
-		*else
-		**/
-		if (((num1 <= num3) && (num3 + num4 >= num1 + num2)) ||
+		else if (((num1 <= num3) && (num3 + num4 >= num1 + num2)) ||
 				((num1 == 0) && ((num1 <= 3) && (num3 != 0))))
 		{
 			print_s(num1, num2, num3, num4);
