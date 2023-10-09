@@ -22,8 +22,14 @@ int main(void)
 
 	while (num1 <= 9)
 	{
+		/**
 		if ((num1 == num3) && (num2 == num4))
+		{
 			num4++;
+		}
+		**
+		*else
+		**/
 		if (((num1 <= num3) && (num3 + num4 >= num1 + num2)) ||
 				((num1 == 0) && ((num1 <= 3) && (num3 != 0))))
 		{
@@ -31,7 +37,7 @@ int main(void)
 			if (num1 == 9 && num2 == 8 && num3 == 9 && num4 == 9)
 				break;
 			condition();
-			num4++;
+			++num4;
 			if (num4 > 9)
 			{
 				num3 = num3 + 1;
@@ -51,13 +57,26 @@ int main(void)
 				num4 = 0;
 			}
 		}
-		else if (num4 > 9 && num3 < 9)
+		else if (num4 > 9 && num3 <= 9)
 		{
 			num3++;
 			num4 = 0;
 		}
+		else if (num3 > 9)
+		{
+			num2++;
+			num3 = 0;
+			num4 = 0;
+		}
+		else if (num2 > 9)
+		{
+			num1++;
+			num2 = 0;
+			num3 = 0;
+			num4 = 0;
+		}
 		else
-			num4++;
+			++num4;
 	}
 	putchar('\n');
 	return (0);
@@ -72,6 +91,7 @@ int main(void)
  * @num4: number 4
  *
  */
+
 void print_s(int num1, int num2, int num3, int num4)
 {
 	putchar(num1 + 48);
