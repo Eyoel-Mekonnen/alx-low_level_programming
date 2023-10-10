@@ -18,6 +18,8 @@ void jack_bauer(void)
 			_putchar(num3 + 48);
 			_putchar(num4 + 48);
 			_putchar('\n');
+			if (num1 == 2 && num2 == 3 && num3 == 5 && num4 == 9)
+				break;
 			++num4;
 			if (num4 > 9)
 			{
