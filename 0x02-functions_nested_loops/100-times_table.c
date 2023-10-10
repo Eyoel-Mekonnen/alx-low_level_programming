@@ -77,6 +77,6 @@ void print_times_table(int n)
 			i++;
 		}
 	}
-	else if (n <= 0 || n > 15) 
-		return;
+	else
+		return (0);
 }
