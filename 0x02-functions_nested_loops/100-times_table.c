@@ -21,7 +21,8 @@ void con2(void)
 }
 /**
  * con3 - prints second condition
- *
+ *@i: row and column
+ *@j: row and column
  */
 void con3(int i, int j)
 {
@@ -77,5 +78,5 @@ void print_times_table(int n)
 		}
 	}
 	else
-		_putchar(' ');
+		return;
 }
