@@ -17,12 +17,12 @@ void times_table(void)
 		{
 			if (i * j > 9)
 			{
-				_putchar(' ' );
+				_putchar(' ');
 				_putchar(((i * j) / 10) + 48);
-				_putchar(((i * j) % 10) + 48);		
+				_putchar(((i * j) % 10) + 48);
 			}
 			else
-			{ 
+			{
 				if (j > 0)
 				{
 					_putchar(' ');
