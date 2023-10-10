@@ -18,7 +18,7 @@ int main(void)
 		num3 = num1 + num2;
 		if (i == 47)
 		{
-			printf("%.Lf\n", num3);
+			printf("%.Lf", num3);
 			break;
 		}
 		printf("%.Lf, ", num3);
