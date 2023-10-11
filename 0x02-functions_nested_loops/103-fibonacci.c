@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	int  num1 = 1, num2 = 2, num3 = 0, sum = 0, checker = 2;
+	int  num1 = 1, num2 = 2, num3 = 0, sum = 2, checker = 2;
 
 	while (num3 < 4000000)
 	{
@@ -17,7 +17,6 @@ int main(void)
 			sum = sum + num3;
 		num1 = num2;
 		num2 = num3;
-		
 	}
 	printf("%d\n", sum);
 	return (0);
