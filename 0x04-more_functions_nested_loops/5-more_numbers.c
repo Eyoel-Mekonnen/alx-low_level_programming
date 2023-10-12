@@ -20,7 +20,6 @@ void more_numbers(void)
 				_putchar(j + 48);
 				if (i == 1)
 				{
-					_putchar(i + 48);
 					_putchar(j + 48);
 				}
 				if (i == 1 && j == 4)
