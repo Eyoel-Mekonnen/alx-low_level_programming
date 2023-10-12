@@ -14,7 +14,7 @@ void print_diagonal(int n)
 
 	while (i <=  n)
 	{
-		j = 0;
+		j = 1;
 
 		while (j <= n)
 		{
