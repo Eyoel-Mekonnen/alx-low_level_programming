@@ -1,0 +1,29 @@
+#include "main.h"
+
+/**
+ * more_numbers - prints form 0 -14
+ *
+ */
+void more_numbers(void)
+{
+	int i = 0, j;
+
+	while (i <= 1)
+	{
+		j = 0;
+		while (j <= 9)
+		{
+			if (i == 0)
+			_putchar(j + 48);
+			if (i == 1)
+			{
+				_putchar(i + 48);
+				_putchar(j + 48);
+			}
+			j++;
+		}
+		i++;
+	}
+	_putchar('\n');
+
+}
