@@ -2,7 +2,7 @@
 
 /**
  * _isupper - checks for uppercase
- *@c - character passed
+ *@c: character passed
  *
  *Return: the character
  */
