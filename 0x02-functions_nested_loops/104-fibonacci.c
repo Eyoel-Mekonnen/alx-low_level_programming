@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+
+
 /**
  * main - print fibonacci 98
  *
@@ -7,42 +9,43 @@
  */
 int main(void)
 {
-	unsigned long int num1 = 1, num2 = 2, num3 = 0, num3b, num2b, num1b;
-	int i = 0;
+	unsigned long num1 = 1, num2 = 2, num3 = 0, num1b, num2b, num3b, num1a,
+			num2a, mul = 1000000000, i = 0;
 
-	while (i < 98)
-	{
-		if (i == 0)
-			printf("%lu, %lu, ", num1, num2);
-		if (i < 92)
+		while (i < 88)
 		{
 
+			if (i == 0)
+			{
+				printf("%lu, %lu, ", num1, num2);
+			}
 			num3 = num1 + num2;
-		}
-		if (i == 97)
-		{
-			printf("%lu", num3);
-			break;
-		}
-		if (i < 90)
-		{
 			printf("%lu, ", num3);
 			num1 = num2;
 			num2 = num3;
+			i++;
 		}
-		if (i >= 90)
-		{
+			num1a = num1 / mul;
+			num1b = (num1) % mul;
+			num2a = num2 / mul;
+			num2b = (num2) % mul;
+			for (i = 88; i < 96; i++)
+			{
+				num3 = num1a + num2a;
+				num3b = (num1b + num2b) % mul;
 
-			num1 = (num2 + num2b) / 10000000000;
-			num1b = (num2 + num2b) % 10000000000;
-			num2 = (num3 + num3b) / 10000000000;
-			num2b = (num3 + num3b) % 10000000000;
-			num3 = ((num1 + num1b) + (num2 + num2b)) / 10000000000;
-			num3b = ((num1 + num1b) + (num2 + num2b)) % 10000000000;
-			printf("%lu%lu, ", num3, num3b);
-		}
-		i++;
-	}
+				if ((num1b + num2b) > ((num1b + num2b) % mul))
+					++num3;
+				printf("%lu%lu", num3, num3b);
+				if (i == 95)
+					break;
+				printf(", ");
+				num1a = num2a;
+				num1b = num2b;
+				num2a = num3;
+				num2b = num3b;
+			}
+
 	printf("\n");
 	return (0);
 }
