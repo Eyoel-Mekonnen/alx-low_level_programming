@@ -18,12 +18,11 @@ void rev_string(char *s)
 		i++;
 	}
 	len = i - 1;
-	while (z <= i / 2)
+	while (z < i / 2)
 	{
 		temp = s[z];
 		s[z] = s[len];
 		s[len--] = temp;
 		z++;
-		i--;
 	}
-}
+}	
