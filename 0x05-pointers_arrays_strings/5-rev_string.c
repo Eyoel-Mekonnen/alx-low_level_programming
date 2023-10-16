@@ -11,19 +11,20 @@ void rev_string(char *s)
 	int i = 0;
 	char temp;
 	int z = 0;
+	int len;
 
 	while (s[i] != '\0')
 	{
 		i++;
 	}
-	i = i - 1;
-	while (i >= 0)
+	len = i - 1;
+	printf("%d\n", i);
+	while (z <= i / 2)
 	{
 		temp = s[z];
-		s[z] = s[i];
-		s[i] = temp;
+		s[z] = s[len];
+		s[len--] = temp;
 		z++;
 		i--;
 	}
-	
 }
