@@ -18,7 +18,6 @@ void rev_string(char *s)
 		i++;
 	}
 	len = i - 1;
-	printf("%d\n", i);
 	while (z <= i / 2)
 	{
 		temp = s[z];
