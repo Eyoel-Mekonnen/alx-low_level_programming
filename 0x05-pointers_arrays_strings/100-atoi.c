@@ -28,8 +28,8 @@ int _atoi(char *s)
 			negative++;
 		if (negative % 2 == 0)
 			indicator = indicator;
-		else
-			indicator = -indicator;
+		else if (negative %2 != 0)
+			indicator = -1 * indicator;
 		i++;
 		
 	}
