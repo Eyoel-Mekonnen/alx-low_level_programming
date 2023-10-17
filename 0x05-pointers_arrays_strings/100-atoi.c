@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * _atoi - returns integer
  *@s: the string
@@ -8,22 +8,23 @@
  */
 int _atoi(char *s)
 {
-	int len = 0;
-	int i;
-	int beg;
-	int end;
-
-	while (s[len] != '\0')
-		len++;
-	for (i = 0; i < len; i++)
+	int i = 0, sum = 0, num;
+	int indicator = 1;
+	while (s[i] != '\0')
 	{
-		if (s[i] >= 0 && s[i] <= 9)
+		if (s[i] - '0' >= 0 && s[i] - '0' <= 9)
 		{
-			if (s[i - 1] == '-')
-				return (s[i - 1]);
-			else
-				return (s[i]);
-		}
-	}
+				num = s[i] - '0';
+				if (s[i - 1] == '-')
+					indicator = -indicator;
 
+				sum = num + sum;
+				if (!(s[i + 1] - '0' >= 0 && s[i + 1] - '0' <= 9))
+					break;
+				sum = sum * 10;
+		}
+		i++;
+		
+	}
+	return (sum * indicator);
 }
