@@ -10,7 +10,7 @@ int _atoi(char *s)
 {
 	int i = 0, sum = 0, num;
 	int indicator = 1;
-	int positive  = 0, negative = 0;
+	int negative = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] - '0' >= 0 && s[i] - '0' <= 9)
@@ -22,16 +22,14 @@ int _atoi(char *s)
 					break;
 				sum = sum * 10;
 		}
-		else if (s[i] == '+')
-			positive++;
-		else if (s[i] == '-')
+		if (s[i] == '-')
 			negative++;
-		if (negative % 2 == 0)
-			indicator = indicator;
-		else if (negative %2 != 0)
-			indicator = -1 * indicator;
 		i++;
 		
 	}
+	if (negative % 2 == 0)
+		indicator = indicator;
+	else 
+		indicator = -1 * indicator;
 	return (sum * indicator);
 }
