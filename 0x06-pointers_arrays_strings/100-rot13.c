@@ -8,20 +8,25 @@
  */
 char *rot13(char *src)
 {
-	int len = 0;
-	int i;
+	int i = 0, j;
 
-	while (src[len] != '\0')
-		len++;
+	char *alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *rot = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; i < len;  i++)
+	while (src[i] != '\0')
 	{
-		if (((src[i] >= 'a') && (src[i] <= 'm')) ||
-				((src[i] >= 'A') && (src[i] <= 'M')))
-			src[i] = src[i] + 13;
-		else if (((src[i] >= 'n') && (src[i] <= 'z')) ||
-				((src[i] >= 'N') && (src[i] <= 'Z')))
-			src[i] = src[i] - 13;
+		j = 0;
+
+		while (alpha[j] != '\0')
+		{
+			if (src[i] == alpha[j])
+			{
+				src[i] = rot[j];
+				break;
+			}
+			j++;
+		}
+		i++;
 	}
 	src[i] = '\0';
 	return (src);
