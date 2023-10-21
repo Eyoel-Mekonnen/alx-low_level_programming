@@ -8,7 +8,7 @@
 void print_number(int n)
 {
 	unsigned int sum = 0, i;
-	 int num = n;
+	unsigned int num = n;
 
 	if (n < 0)
 		num = -1 * n;
@@ -35,6 +35,7 @@ void print_number(int n)
 		if (sum / 10 == 0)
 		{
 			_putchar((sum) + 48);
+			break;
 		}
 	}
 }
