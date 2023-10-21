@@ -8,3 +8,4 @@ char *string_toupper(char *src);
 char *cap_string(char *src);
 char *leet(char *src);
 char *rot13(char *src);
+void print_number(int n);
