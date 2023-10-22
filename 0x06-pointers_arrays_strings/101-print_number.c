@@ -92,4 +92,6 @@ void print_number(int n)
 			break;
 		}
 	}
+	if (!(num1 > 0 && num2 == 0))
+		print_number2(n);
 }
