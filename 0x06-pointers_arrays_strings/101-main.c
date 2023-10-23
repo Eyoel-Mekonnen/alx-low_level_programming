@@ -7,6 +7,7 @@
  */
 int main(void)
 {
+	/**
 	print_number(INT_MAX);
 	_putchar('\n');
 	print_number(INT_MIN);
@@ -27,6 +28,12 @@ int main(void)
 	_putchar('\n');
 	print_number(0);
 	_putchar('\n');
+	print_number(100);
+	_putchar('\n');
+	**/
+	print_number(127620);
+	_putchar('\n');
+
 
 	return (0);
 }

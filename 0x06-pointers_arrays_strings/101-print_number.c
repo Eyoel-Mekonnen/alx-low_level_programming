@@ -3,7 +3,7 @@
 /**
  * print_number2 - prints second half
  * @num2: second part of number
- * @num1: first number passed
+ * 
  */
 void print_number2(int num2)
 {
@@ -25,6 +25,7 @@ void print_number2(int num2)
 			break;
 		}
 	}
+	printf("%u - sum2 before loop\n", sum2);
 	for (i = 0; sum2 / div != 0; i++)
 	{
 		_putchar((sum2 % div) + 48);
@@ -60,16 +61,20 @@ void print_number(int n)
 		_putchar('-');
 		n = -1 * n;
 		num1 = (n / div);
+		printf("%u - num1\n", num1);			
 		num2 = (n % div);
+		printf("%u - num2\n", num2);
 	}
 	else if (n > 0)
 	{
 		num1 = n / div;
+		printf("%u - num1\n", num1);
 		num2 = n % div;
+		printf("%u - num2\n", num2);
 		if (num1 > 0 && num2 == 0)
 			print_number2(n);
 	}
-	if (n == 0)
+	else if(n == 0)
 		_putchar(n + 48);
 	while (num1 / 10 != 0)
 	{
@@ -93,5 +98,5 @@ void print_number(int n)
 		}
 	}
 	if (!(num1 > 0 && num2 == 0))
-		print_number2(n);
+		print_number2(num2);
 }
