@@ -4,7 +4,7 @@
  * @n: the main name
  * @base: base to test for primes
  *
- * Retrun: 1 or 0
+ * Return: 1 or 0
  */
 int _prime2(int n, int base)
 {
