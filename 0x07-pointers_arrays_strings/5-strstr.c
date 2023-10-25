@@ -34,11 +34,11 @@ char *_strstr(char *haystack, char *needle)
 					continue;
 				}
 			}
+			if (i == 0 && haystack[j] == '\0')
+				return (NULL);
 		}
-		if (needle[i] == 0 && haystack[j] == '\0')
-			return (NULL);
 	}
-	return ('\0');
+	return (NULL);
 }
 
 

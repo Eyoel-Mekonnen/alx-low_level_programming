@@ -1,3 +1,4 @@
+
 #include "main.h"
 #include <stdio.h>
 
@@ -9,7 +10,7 @@
 int main(void)
 {
 	char *s = "bro thi this way";
-	char *f = "this";
+	char *f = "gosh";
 	char *t;
 
 	t = _strstr(s, f);
