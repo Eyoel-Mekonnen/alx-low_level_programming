@@ -37,10 +37,10 @@ int main(int argc, char *argv[])
 	int i;
 	int sum = 0, num, correct = 0;
 
-	for (i = 1; i < argc; i++)
+	for (i = 1; i < argc && argc > 1; i++)
 	{
 		if (*(argv[i]) < '9' && (*(argv[i])) > '0')
-		{	
+		{
 			num = atoi_(argv[i]);
 			sum = sum + num;
 		}
@@ -49,9 +49,8 @@ int main(int argc, char *argv[])
 			correct++;
 				break;
 		}
-	
 	}
-	if (correct > 0)
+	if (correct > 0 || argc < 2)
 		printf("Error\n");
 	else
 		printf("%d\n", sum);
