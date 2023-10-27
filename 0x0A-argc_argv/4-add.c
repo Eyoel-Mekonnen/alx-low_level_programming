@@ -50,8 +50,10 @@ int main(int argc, char *argv[])
 				break;
 		}
 	}
-	if (correct > 0 || argc < 2)
+	if (correct > 0)
 		printf("Error\n");
+	else if(argc < 2)
+		printf("0\n");
 	else
 		printf("%d\n", sum);
 
