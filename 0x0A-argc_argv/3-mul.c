@@ -1,5 +1,10 @@
 #include <stdio.h>
-
+/**
+ * atoi_ - converts string to integer
+ * @s1: the string passed
+ *
+ * Return: the number
+ */
 
 int atoi_(char *s1)
 {
@@ -35,7 +40,7 @@ int main(int argc, char *argv[])
 
 	int num1;
 	int num2;
-	
+
 	if (argc == 3)
 	{
 

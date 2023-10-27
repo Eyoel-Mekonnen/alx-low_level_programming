@@ -1,6 +1,8 @@
 #include <stdio.h>
 /**
  *main - check the code
+ *@argc: arguments number
+ *@argv: array of pointers
  *
  *Return: Always 0
  */
