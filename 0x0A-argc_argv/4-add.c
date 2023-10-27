@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 	}
 	if (correct > 0)
 		printf("Error\n");
-	else if(argc < 2)
+	else if (argc < 2)
 		printf("0\n");
 	else
 		printf("%d\n", sum);
