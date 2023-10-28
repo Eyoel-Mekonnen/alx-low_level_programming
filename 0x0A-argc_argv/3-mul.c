@@ -15,8 +15,15 @@ int atoi_(char *s1)
 
 	for (i = 0; i < len; i++)
 	{
+		if (s1[i] == '-')
+			i++;
 		if (s1[i] >= '0' && s1[i] <= '9')
-			num1 = s1[i] - '0';
+		{
+			if (s1[i - 1] == '-')
+				num1 = -1 * (s1[i] - '0');
+			else
+				num1 = s1[i] - '0';
+		}
 		sum = sum + num1;
 		if (s1[i + 1] == '\0')
 			break;
