@@ -9,7 +9,8 @@
  */
 int atoi_(char *s1)
 {
-	int len = 0, sum = 0, num, i = 0;
+	int len = 0, i = 0;
+	unsigned int sum = 0, num;
 
 	while (s1[len] != '\0')
 		len++;
@@ -34,8 +35,8 @@ int atoi_(char *s1)
  */
 int main(int argc, char *argv[])
 {
-	int i;
-	int sum = 0, num, correct = 0;
+	int i, correct = 0;
+	unsigned int sum = 0, num;
 
 	for (i = 1; i < argc && argc > 1; i++)
 	{
