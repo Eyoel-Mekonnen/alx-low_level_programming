@@ -8,7 +8,8 @@
 
 int atoi_(char *s1)
 {
-	int len = 0, num1, sum = 0, i;
+	int len = 0, i;
+	unsigned int sum = 0, num1;
 
 	while (s1[len] != '\0')
 		len++;
