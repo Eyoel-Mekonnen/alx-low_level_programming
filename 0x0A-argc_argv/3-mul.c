@@ -8,28 +8,24 @@
 
 int atoi_(char *s1)
 {
-	int len = 0, i;
+	int i;
 	unsigned int sum = 0, num1;
 
-	while (s1[len] != '\0')
-		len++;
-
-	for (i = 0; i < len; i++)
+	for (i = 0; s1[i] != '\0'; i++)
 	{
 		if (s1[i] == '-')
 			i++;
 		if (s1[i] >= '0' && s1[i] <= '9')
 		{
-			if (s1[i - 1] == '-')
-				num1 = -1 * (s1[i] - '0');
-			else
-				num1 = s1[i] - '0';
+			num1 = s1[i] - '0';
 		}
 		sum = sum + num1;
 		if (s1[i + 1] == '\0')
 			break;
 		sum = sum * 10;
 	}
+	if (s1[0] == '-')
+		sum = -1 * sum;
 	return (sum);
 }
 
