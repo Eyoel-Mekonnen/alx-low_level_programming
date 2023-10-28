@@ -40,6 +40,8 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc && argc > 1; i++)
 	{
+		if (*(argv[i]) == '-')
+				i++;
 		if (*(argv[i]) >= '0' && (*(argv[i])) <= '9')
 		{
 			num = atoi_(argv[i]);
