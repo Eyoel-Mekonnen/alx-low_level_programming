@@ -38,13 +38,13 @@ int main(int argc, char *argv[])
 	int i, correct = 0;
 	unsigned int sum = 0, num;
 
-	for (i = 1; i < argc && argc > 1; i++)
+	for (i = 0; i < argc && argc > 1; i++)
 	{
 		if (*(argv[i]) == '-')
-				i++;
+				++i;
 		if (*(argv[i]) >= '0' && (*(argv[i])) <= '9')
 		{
-			num = atoi_(argv[i]);
+			num = atoi_((argv[i]));
 			sum = sum + num;
 		}
 		else
