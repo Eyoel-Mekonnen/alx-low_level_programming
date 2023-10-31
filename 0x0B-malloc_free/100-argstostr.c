@@ -40,12 +40,9 @@ char *argstostr(int ac, char **av)
 			*(ptr + k) = (*(*(av + i) + j));
 			k++;
 			j++;
-			if ((*(*(av + i) + j)) == '\0')
-			{
-				*(ptr + k) = '\n';
-				k++;
-			}
 		}
+		*(ptr + k) = '\n';
+		k++;
 		i++;
 	}
 	*(ptr + k) = '\0';
