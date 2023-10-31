@@ -9,22 +9,25 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int count = 0, i, k = 0, j;
+	int count = 0, i = 0, k = 0, j;
 	char *ptr;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	for (i = 0; i < ac; i++)
+	while (i < ac)
 	{
-		for (j = 0; ((*(*(av + i) + j)) != '\0'); j++)
+		j = 0;
+		while ((*(*(av + i) + j)) != '\0')
 		{
 			count++;
+			j++;
 			if ((*(*(av + i) + j)) == '\0')
 			{
 				count++;
 				break;
 			}
 		}
+		i++;
 	}
 	ptr = (char *)malloc((sizeof(char) * count) + 1);
 	if (ptr == NULL)
