@@ -24,7 +24,6 @@ char *argstostr(int ac, char **av)
 			if ((*(*(av + i) + j)) == '\0')
 			{
 				count++;
-				break;
 			}
 		}
 		i++;
@@ -45,7 +44,6 @@ char *argstostr(int ac, char **av)
 			{
 				*(ptr + k) = '\n';
 				k++;
-				break;
 			}
 		}
 		i++;
