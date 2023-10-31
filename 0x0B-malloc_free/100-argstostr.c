@@ -15,13 +15,15 @@ char *argstostr(int ac, char **av)
 	while (i < ac)
 	{
 		j = 0;
-
 		while ((*(*(av + i) + j)) != '\0')
 		{
 			count++;
 			j++;
 			if ((*(*(av + i) + j)) == '\0')
+			{
+				count++;
 				break;
+			}
 		}
 		i++;
 	}
