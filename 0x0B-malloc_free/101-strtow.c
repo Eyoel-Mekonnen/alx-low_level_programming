@@ -37,6 +37,8 @@ char **strtow(char *str)
 		
 	}
 	if (count == 0)
+		return (NULL);
+	if (count == 0)
 	{
 		i = 0;
 		while (str[i] != '\0')
