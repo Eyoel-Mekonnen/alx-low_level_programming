@@ -55,7 +55,7 @@ char **strtow(char *str)
 		while(str[i] != '\0')
 		{
 			(*(*(ptr + j) + i)) = str[i];
-			i++;
+			i = i + 2;
 		}
 		(*(*(ptr + j) + i)) = '\0';
 		return (ptr);
