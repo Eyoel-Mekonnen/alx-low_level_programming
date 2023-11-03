@@ -12,10 +12,11 @@ char **strtow(char *str)
 	int i = 0, count = 0, len = 0, wordcount, setter, j = 0,flag;
 	char **ptr;
 	
-	if (str == NULL || str[0] == '\0')
+	if (str == NULL || str[0] == ' ')
 		return (NULL);
 	while (str[len] != '\0')
 		len++;
+
 	while (i < len - 1)
 	{
 		if (str[i] == ' ')
@@ -67,6 +68,7 @@ char **strtow(char *str)
 			(*(*(ptr + j) + (setter))) = '\0';
 			j++;
 		}
+		*(ptr + j) = NULL;
 	}
 	return (ptr);
 }
