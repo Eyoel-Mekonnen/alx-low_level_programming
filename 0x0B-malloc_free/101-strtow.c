@@ -9,19 +9,21 @@
  */
 char **strtow(char *str)
 {
-	int i = 0, count = 0, setter, j = 0, wordcount;
-	char **ptr;	
+	int i = 0, count = 0, len = 0, wordcount = 0, setter = 0, j = 0;
+	char **ptr;
 
-	while (str[i] != '\0')
+	while (str[len] != '\0')
+		len++;
+	while (i < len - 1)
 	{
-		if (str[i] == ' ')
+		if (str[i] == 32)
 			i++;
-		if (str[i] != ' ')
+		if (str[i] != 32)
 		{
-			while (str[i] != ' ')
+			while (str[i] != 32)
 			{
 				i++;
-				if (str[i] == ' ')
+				if (str[i] == 32)
 				{
 					count++;
 					break;
@@ -30,12 +32,11 @@ char **strtow(char *str)
 		}
 		i++;
 	}
-	printf("%d\n", count);
 	ptr = (char **)malloc(sizeof(char *) * count);
 	if (ptr == NULL)
 		return (NULL);
 	i = 0;
-	while (str[i] != '\0')
+	while (i < len - 1)
 	{
 		if (str[i] == ' ')
 			i++;
@@ -51,15 +52,13 @@ char **strtow(char *str)
 			*(ptr + j) = (char *)malloc(wordcount * sizeof(char) + 1);
 			while (wordcount)
 			{
-				*(*(ptr + j) + setter) = str[i - wordcount];
-				 wordcount--;
-				 setter++;
+				(*(*(ptr + j) + setter)) = str[i - wordcount];
+				wordcount--;
+				setter++;
 			}
 			*(*(ptr + j) + setter) = '\0';
+			j++;
 		}
-
 	}
 	return (ptr);
-	
-	
 }
