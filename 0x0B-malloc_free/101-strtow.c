@@ -70,7 +70,7 @@ char **strtow(char *str)
 			(*(*(ptr + j) + (setter))) = '\0';
 			j++;
 		}
-		*(ptr + j) = NULL;
+
 	}
 	return (ptr);
 }
