@@ -36,18 +36,17 @@ char **strtow(char *str)
 		}
 		
 	}
-	/**
 	if (count == 0)
 	{
 		i = 0;
 		while (str[i] != '\0')
 		{
 			i = i + 2;
-			i++;
 			count++;
 	
 		}
-		printf("%d - count \n", count);
+		count = count - 2;
+		printf("%d - count\n", count);
 		ptr = (char **)malloc(sizeof(char *) + 1);
 		if (ptr == NULL)
 			return (NULL);
@@ -62,7 +61,6 @@ char **strtow(char *str)
 		return (ptr);
 		
 	}
-	**/
 	ptr = (char **)malloc(sizeof(char *) * count + 1);
 	if (ptr == NULL)
 		return (NULL);
