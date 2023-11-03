@@ -36,7 +36,6 @@ char **strtow(char *str)
 		}
 		
 	}
-	printf("%d - count\n", count);
 	if (count == 0)
 	{
 		i = 0;
@@ -45,7 +44,6 @@ char **strtow(char *str)
 			count++;
 			i++;
 		}
-		printf("%d - count for empty\n", count);
 		ptr = (char **)malloc(sizeof(char *) + 1);
 		if (ptr == NULL)
 			return (NULL);
