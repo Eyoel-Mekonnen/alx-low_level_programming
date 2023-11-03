@@ -38,31 +38,6 @@ char **strtow(char *str)
 	}
 	if (count == 0)
 		return (NULL);
-	if (count == 0)
-	{
-		i = 0;
-		while (str[i] != '\0')
-		{
-			i = i + 2;
-			count++;
-	
-		}
-		count = count - 2;
-		printf("%d - count\n", count);
-		ptr = (char **)malloc(sizeof(char *) + 1);
-		if (ptr == NULL)
-			return (NULL);
-		*(ptr + j) = (char *)malloc((count + 1) * sizeof(char));
-		i = 0;
-		while(str[i] != '\0')
-		{
-			(*(*(ptr + j) + i)) = str[i];
-			i = i + 2;
-		}
-		(*(*(ptr + j) + i)) = '\0';
-		return (ptr);
-		
-	}
 	ptr = (char **)malloc(sizeof(char *) * count + 1);
 	if (ptr == NULL)
 		return (NULL);
