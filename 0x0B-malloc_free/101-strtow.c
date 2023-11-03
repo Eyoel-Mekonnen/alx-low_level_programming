@@ -12,7 +12,7 @@ char **strtow(char *str)
 	int i = 0, count = 0, len = 0, wordcount, setter, j = 0,flag;
 	char **ptr;
 	
-	if (str == NULL || str[0] == ' ')
+	if (str == NULL)
 		return (NULL);
 	while (str[len] != '\0')
 		len++;
@@ -34,6 +34,30 @@ char **strtow(char *str)
 					i++;
 			}
 		}
+		
+	}
+	printf("%d - count\n", count);
+	if (count == 0)
+	{
+		i = 0;
+		while (str[i] != '\0')
+		{
+			count++;
+			i++;
+		}
+		printf("%d - count for empty\n", count);
+		ptr = (char **)malloc(sizeof(char *) + 1);
+		if (ptr == NULL)
+			return (NULL);
+		*(ptr + j) = (char *)malloc((count + 1) * sizeof(char));
+		i = 0;
+		while(str[i] != '\0')
+		{
+			(*(*(ptr + j) + i)) = str[i];
+			i++;
+		}
+		(*(*(ptr + j) + i)) = '\0';
+		return (ptr);
 		
 	}
 	ptr = (char **)malloc(sizeof(char *) * count + 1);
@@ -68,7 +92,6 @@ char **strtow(char *str)
 			(*(*(ptr + j) + (setter))) = '\0';
 			j++;
 		}
-		*(ptr + j) = NULL;
 	}
 	return (ptr);
 }
