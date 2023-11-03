@@ -14,7 +14,6 @@ char **strtow(char *str)
 
 	while (str[len] != '\0')
 		len++;
-	printf("%d\n", len);
 	while (i < len - 1)
 	{
 		if (str[i] == ' ')
