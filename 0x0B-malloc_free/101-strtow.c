@@ -1,22 +1,18 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
+
 /**
- * strtow - splits strings into words
- * @str: the string
+ * counter - counts the number of words
+ * @str: the string that is passed
  *
- * Return: pointer to dynamic memory
+ * Return: the counts of the word
  */
-char **strtow(char *str)
+int counter(char *str)
 {
-	int i = 0, count = 0, len = 0, wordcount, setter, j = 0,flag;
-	char **ptr;
-	
-	if (str == NULL)
-		return (NULL);
+	int len = 0, i = 0, count = 0;
+
 	while (str[len] != '\0')
 		len++;
-
 	while (i < len - 1)
 	{
 		if (str[i] == ' ')
@@ -34,14 +30,30 @@ char **strtow(char *str)
 					i++;
 			}
 		}
-		
 	}
+	return (count);
+}
+/**
+ * strtow - splits strings into words
+ * @str: the string
+ *
+ * Return: pointer to dynamic memory
+ */
+char **strtow(char *str)
+{
+	int i = 0, count, len = 0, wordcount, setter, j = 0, flag;
+	char **ptr;
+
+	if (str == NULL)
+		return (NULL);
+	while (str[len] != '\0')
+		len++;
+	count = counter(str);
 	if (count == 0)
 		return (NULL);
 	ptr = (char **)malloc(sizeof(char *) * (count + 1));
 	if (ptr == NULL)
 		return (NULL);
-	i = 0;
 	while (i < len - 1)
 	{
 		if (str[i] == ' ')
@@ -71,7 +83,6 @@ char **strtow(char *str)
 			j++;
 		}
 		*(ptr + j) = NULL;
-
 	}
 	return (ptr);
 }
