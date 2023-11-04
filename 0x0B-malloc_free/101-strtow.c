@@ -73,7 +73,7 @@ char **strtow(char *str)
 		else if (str[i] != ' ' || str[i] != '\0')
 		{
 			wordcount = word_count(str, i);
-			i = wordcount + i;
+			i = wordcount + i + 1;
 			*(ptr + j) = (char *)malloc((wordcount + 1) * sizeof(char));
 			flag = i - wordcount;
 			setter = 0;
