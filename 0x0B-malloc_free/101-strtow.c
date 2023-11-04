@@ -33,19 +33,6 @@ int counter(char *str)
 	}
 	return (count);
 }
-int word_count(char *str, int i)
-{
-	int wordcount = 0;
-	int j;
-
-	for (j = i; (str[j] != ' ' || str[j] != '\0'); j++)
-	{
-		wordcount++;
-		if (str[j] == ' ' || str[j] == '\0')
-			break;
-	}
-	return (wordcount);
-}
 /**
  * strtow - splits strings into words
  * @str: the string
@@ -72,8 +59,14 @@ char **strtow(char *str)
 			i++;
 		else if (str[i] != ' ' || str[i] != '\0')
 		{
-			wordcount = word_count(str, i);
-			i = wordcount + i + 2;
+			wordcount = 0;
+			while (str[i] != ' ' || str[i] != '\0')
+			{
+				wordcount++;
+				i++;
+				if (str[i] == ' ' || str[i] == '\0')
+					break;
+			}
 			*(ptr + j) = (char *)malloc((wordcount + 1) * sizeof(char));
 			flag = i - wordcount;
 			setter = 0;
