@@ -38,7 +38,7 @@ char **strtow(char *str)
 	}
 	if (count == 0)
 		return (NULL);
-	ptr = (char **)malloc(sizeof(char *) * count + 1);
+	ptr = (char **)malloc(sizeof(char *) * (count + 1));
 	if (ptr == NULL)
 		return (NULL);
 	i = 0;
@@ -70,7 +70,7 @@ char **strtow(char *str)
 			(*(*(ptr + j) + (setter))) = '\0';
 			j++;
 		}
-		*(ptr + j) = '\0';
+		*(ptr + j) = NULL;
 
 	}
 	return (ptr);
