@@ -9,6 +9,7 @@
 int counter(char *str)
 {
 	int len = 0, i = 0, count = 0;
+
 	if (str == NULL)
 		return (0);
 	while (str[len] != '\0')
@@ -33,6 +34,13 @@ int counter(char *str)
 	}
 	return (count);
 }
+/**
+ * count_i - function to track i
+ * @str: the string that is passed
+ * @i: the i's index that is passed
+ *
+ * Return: i as an integer value
+ */
 int count_i(char *str, int i)
 {
 	while (str[i] != ' ' || str[i] != '\0')
@@ -43,9 +51,17 @@ int count_i(char *str, int i)
 	}
 	return (i);
 }
+/**
+ * word_count - count the number of word after splitting
+ * @str: the string that is passed
+ * @i: the index value passed
+ *
+ * Return: the word count
+ */
 int word_count(char *str, int i)
 {
 	int wordcount = 0;
+
 	while (str[i] != ' ' || str[i] != '\0')
 	{
 		wordcount++;
