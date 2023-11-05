@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-
 /**
  * counter - counts the number of words
  * @str: the string that is passed
@@ -10,7 +9,8 @@
 int counter(char *str)
 {
 	int len = 0, i = 0, count = 0;
-
+	if (str == NULL)
+		return (0);
 	while (str[len] != '\0')
 		len++;
 	while (i < len - 1)
@@ -33,6 +33,28 @@ int counter(char *str)
 	}
 	return (count);
 }
+int count_i(char *str, int i)
+{
+	while (str[i] != ' ' || str[i] != '\0')
+	{
+		i++;
+		if (str[i] == ' ' || str[i] == '\0')
+			break;
+	}
+	return (i);
+}
+int word_count(char *str, int i)
+{
+	int wordcount = 0;
+	while (str[i] != ' ' || str[i] != '\0')
+	{
+		wordcount++;
+		i++;
+		if (str[i] == ' ' || str[i] == '\0')
+			break;
+	}
+	return (wordcount);
+}
 /**
  * strtow - splits strings into words
  * @str: the string
@@ -41,7 +63,7 @@ int counter(char *str)
  */
 char **strtow(char *str)
 {
-	int i = 0, count, len = 0, wordcount, setter, j = 0, flag;
+	int i = 0, count = 0, len = 0, wordcount, setter, j = 0, flag;
 	char **ptr;
 
 	if (str == NULL)
@@ -59,15 +81,11 @@ char **strtow(char *str)
 			i++;
 		else if (str[i] != ' ' || str[i] != '\0')
 		{
-			wordcount = 0;
-			while (str[i] != ' ' || str[i] != '\0')
-			{
-				wordcount++;
-				i++;
-				if (str[i] == ' ' || str[i] == '\0')
-					break;
-			}
+			wordcount = word_count(str, i);
+			i = count_i(str, i);
 			*(ptr + j) = (char *)malloc((wordcount + 1) * sizeof(char));
+			if (*(ptr + j) == NULL)
+				return (NULL);
 			flag = i - wordcount;
 			setter = 0;
 			for (; (wordcount > 0); ++setter)
