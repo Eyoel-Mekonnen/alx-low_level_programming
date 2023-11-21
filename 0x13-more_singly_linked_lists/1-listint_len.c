@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * size_t listint_len - returns the number of elements
+ * listint_len - returns the number of elements
  * @h: address of the first node
  *
  * Return: number of element
