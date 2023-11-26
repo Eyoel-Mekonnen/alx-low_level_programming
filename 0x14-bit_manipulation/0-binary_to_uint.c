@@ -16,7 +16,8 @@ unsigned int power_function(unsigned int exponent)
 		return (2 * power_function(exponent - 1));
 	}
 }
-/*
+
+/**
  * binary_to_uint - binary to integer
  * @b: the character passed
  *
@@ -32,7 +33,7 @@ unsigned int binary_to_uint(const char *b)
 		return (0);
 	while (b[count] != '\0')
 	{
-	       count++;
+		count++;
 	}
 	for (i = count - 1; i >= 0; i--)
 	{
