@@ -35,7 +35,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (ptr1->next->next == NULL)
 	{
 		*h = add_dnodeint_end(h, n);
-		free_dlistint(node);
+		free(node);
 		return (*h);
 	}
 	else
