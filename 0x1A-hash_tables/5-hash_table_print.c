@@ -19,18 +19,17 @@ void hash_table_print(const hash_table_t *ht)
 	for (i = 0; i < ht->size; i++)
 	{
 		hash_node_t *printer = ht->array[i];
-
+		if (tracker == 1)
+			printf(", ");
 		while (printer != NULL)
 		{
-			if (tracker > 0)
-			{
-				printf(", ");
-			}
 			printf("'%s': ", printer->key);
 			printf("'%s'", printer->value);
-			tracker = 1;
 			printer = printer->next;
+			if (printer != NULL)
+				printf(", ");
 		}
+		tracker = 1;
 	}
 	printf("}\n");
 }
