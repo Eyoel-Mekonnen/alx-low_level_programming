@@ -4,6 +4,6 @@ OBJ= %.o
 NAME=school
 all: $(OBJ)
 	$(CC) -o school $(OBJ) -lm
-$(OBJ): $(SRC)
+%.o: %.c
 	$(CC) -c $(SRC)
 
