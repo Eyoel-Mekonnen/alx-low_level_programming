@@ -2,14 +2,12 @@ CC = gcc
 SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
 NAME = school
-RM = rm
+RM = rm -f
 all : $(NAME)
 
 $NAME: 
-	$(CC) -o $@ $(SRC)
+	$(CC) $(OBJ) -o $(NAME)
 
-%.o: %.c
-	$(CC) -c $< -o $@
 	
 clean:
 	$(RM) *~ $(NAME)
@@ -19,8 +17,4 @@ oclean:
 
 fclean:clean oclean
 
-re:
-	$(MAKE) fclean
-	$(MAKE) all
-
-.PHONY
+re: fclean all
