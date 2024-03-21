@@ -5,12 +5,12 @@ NAME = school
 RM = rm -f
 all : $(NAME)
 
-$NAME: $(OBJ)
-	$(CC) -o $@ $^
+$NAME: 
+	$(CC) -o $@ $(SRC)
 
 %.o: %.c
 	$(CC) -c $< -o $@
-
+	
 clean:
 	$(RM) *~ $(NAME)
 
@@ -22,3 +22,5 @@ fclean:clean oclean
 re:
 	$(MAKE) fclean
 	$(MAKE) all
+
+.PHONY
