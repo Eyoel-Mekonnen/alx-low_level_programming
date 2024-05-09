@@ -10,31 +10,30 @@
  */
 int binary_search_private(int *array, size_t left, size_t right, int value)
 {
-        int middle;
-        size_t i;
+	int middle;
+	size_t i;
 
-        if (left > right)
-                return (-1);
-        middle = left + ((right - left) / 2);
-        printf("Searching in array: ");
-        for (i = left; i <= right; i++)
-        {
-                printf("%d", array[i]);
-                if (i < right)
-                        printf(", ");
-
-        }
-        printf("\n");
-        if (value == array[middle])
-                return (middle);
-        else if (value < array[middle])
-        {
-                return (binary_search_private(array, left, middle - 1, value));
-        }
-        else
-        {
-                return (binary_search_private(array, middle + 1, right, value));
-        }
+	if (left > right)
+		return (-1);
+	middle = left + ((right - left) / 2);
+	printf("Searching in array: ");
+	for (i = left; i <= right; i++)
+	{
+		printf("%d", array[i]);
+		if (i < right)
+			printf(", ");
+	}
+	printf("\n");
+	if (value == array[middle])
+		return (middle);
+	else if (value < array[middle])
+	{
+		return (binary_search_private(array, left, middle - 1, value));
+	}
+	else
+	{
+		return (binary_search_private(array, middle + 1, right, value));
+	}
 }
 /**
  * exponential_search - search sorted array of exponential
@@ -66,5 +65,5 @@ int exponential_search(int *array, size_t size, int value)
 		right = size - 1;
 	printf("Value found between indexes [%ld] and [%ld]\n", left, right);
 	index = binary_search_private(array, left, right, value);
-	return index;
+	return (index);
 }
