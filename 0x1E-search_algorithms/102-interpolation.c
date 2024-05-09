@@ -31,13 +31,13 @@ size_t interpolation_search_p(int *array, size_t low, size_t high, int value)
 	else if (value < array[index])
 	{
 		high = index - 1;
-		return (interpolation_search_private(array, low, high, value));
+		return (interpolation_search_p(array, low, high, value));
 	}
 	else if (value > array[index])
 	{
 		low = index + 1;
 		if (low <= high)
-			return (interpolation_search_private(array, low, high, value));
+			return (interpolation_search_p(array, low, high, value));
 		else
 			return (-1);
 	}
